@@ -7,39 +7,13 @@ Compredict challenge work
 
 ## Folder structure
 
+
 <p align="center">
   <a>
     <img src="screenshots/task.png" alt="Logo" width="300" height="400">
   </a>
 </p>
 
-Under the manifests folder you can find the following files 
-***ConfigMap***
-    ├── configmaps
-    │   └── postgres.yml
-
-***deployments**
-    ├── deployments
-    │   ├── db_deployment.yml
-    │   ├── django_deployment.yml
-    │   └── redis_deployment.yml
-
-***Ingress controller**
-    ├── ingress_controller
-    │   └── nginx_ingress_controller.yml
-
-***Namespaces**
-    ├── namespace
-    │   └── namespace.yml
-
-***Secret***
-    ├── secrets
-    │   └── db_secret.yml
-
-***volumes**
-    └── volumes
-        ├── db_storage_volume.yml
-        └── storage_class.yml
 
 
 ## Steps to reproduce the work
