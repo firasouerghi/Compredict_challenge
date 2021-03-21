@@ -45,74 +45,64 @@ Under the manifests folder you can find the following files
 ## Steps to reproduce the work
 1. Create a namespace: to isolate the application
 ```sh
-	kubectl apply -f namespace/namespace.yml
+kubectl apply -f namespace/namespace.yml
 ```
 2. Create the storage class
 
 ```sh
-	kubectl apply -f volumes/storage_class.yml
+kubectl apply -f volumes/storage_class.yml
 ```
 3. Create the volume
-
 ```sh
-	kubectl apply -f volumes/db_storage_volume.yml
+kubectl apply -f volumes/db_storage_volume.yml
 ```
-
 4. Apply postgres database ConfigMap file
-
 ```sh
-	kubectl apply -f configmaps/postgres.yml
+kubectl apply -f configmaps/postgres.yml
 ```
 5. Apply the postgres database secret file
-
 ```sh
-	kubectl apply -f secrets/db_secret.yml
+kubectl apply -f secrets/db_secret.yml
 ```
-
 6. Deploy the database
 
 ```sh
-	kubectl apply -f deployments/db_deployment.yml
+kubectl apply -f deployments/db_deployment.yml
 ```
 7. Deploy Redis
 
 ```sh
-	kubectl apply -f deployments/redis_deployment.yml
+kubectl apply -f deployments/redis_deployment.yml
 ```
 8. Deploy the app 
 
 ```sh
-	kubectl apply -f deployments/redis_deployment.yml
+kubectl apply -f deployments/redis_deployment.yml
 ```
 9. Expose the django app to the public using ingress 
 
 * Install helm3 if it is not already installed 
-
 ```sh
-	wget https://get.helm.sh/helm-v3.0.1-linux-amd64.tar.gz
-	tar -zxvf helm-v3.0.1-linux-amd64.tar.gz
-	sudo mv linux-amd64/helm /usr/local/bin/helm3
+wget https://get.helm.sh/helm-v3.0.1-linux-amd64.tar.gz
+tar -zxvf helm-v3.0.1-linux-amd64.tar.gz
+sudo mv linux-amd64/helm /usr/local/bin/helm3
 ```
-
 * Setup ingress-nginx  official repository
 
 ```sh
-	helm3 repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
-	helm3 repo update
+helm3 repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
+helm3 repo update
 ```
-
 * Execute the nginx's chart
-
 ```sh
-	helm3 install nginx ingress-nginx/ingress-nginx\
-		--namespace conpredict-task\
-		--set rbac.create=true\
-		--set controller.publishService.enabled=true
+helm3 install nginx ingress-nginx/ingress-nginx\
+	--namespace conpredict-task\
+	--set rbac.create=true\
+	--set controller.publishService.enabled=true
 ```
 * Create the nginx resource 
-
 ```sh
-	kubectl apply -f ingress_controller/nginx_ingress_controller.yml
+kubectl apply -f ingress_controller/nginx_ingress_controller.yml
 ```
 
 # Task 2:
