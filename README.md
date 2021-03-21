@@ -8,14 +8,17 @@ Compredict challenge work
 
 
 **Concerning the deployment RestartPolicy**
+
 **I found that Deployments allow only Always as a restartPolicy.**
+
 **If you try OnFailure on Never you will get the following error**
 
 
 
 Deployments allow only Always for the restartPolicy. Refer this documentation https://kubernetes.io/docs/concepts/workloads/controllers/deployment/#pod-template
 
-Also refer the issue report long back regarding the same. https://github.com/kubernetes/kubernetes/issues/24725
+Also refer the issue report long back regarding the same. 
+https://github.com/kubernetes/kubernetes/issues/24725
 
 
 Note: same for DaemonSets, ReplicaSets, ReplicationController.
