@@ -1,5 +1,4 @@
 
-#steps : https://medium.com/bluekiri/deploy-a-nginx-ingress-and-a-certitificate-manager-controller-on-gke-using-helm-3-8e2802b979ec
 apiVersion: networking.k8s.io/v1beta1
 kind: Ingress
 metadata:

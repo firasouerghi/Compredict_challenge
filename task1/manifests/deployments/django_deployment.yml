@@ -94,17 +94,3 @@ spec:
 
 
 
-
-
-
-
-
-
-
-
-
-  #strategy: m3a replicas 
-  #  type: RollingUpdate
-  #  rollingUpdate:
-  #    maxSurge: 2
-  #    maxUnavailable: 0
