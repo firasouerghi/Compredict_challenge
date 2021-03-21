@@ -127,10 +127,17 @@ Note: same for DaemonSets, ReplicaSets, ReplicationController.
 kubernetes==12.0.1
 ```
 2. main.py: python scritp to create a pod 
-3. pod/python_pod.py: python package containing 2 classes 
-* Container class: abstraction for a container 
-* Pod  class: abstraction for pod object 
+3. specifications.ini file : where a user can define a pod specification  
+4. pod/python_pod.py: python package containing 2 classes 
+* Container class: abstraction of a container 
+* Pod  class: abstraction of a pod object 
 ## Steps to reproduce the work
+
+1. Install the needed requirements:
+```sh
+pip3 install -r requirements.py
+``
+
 
 
 
