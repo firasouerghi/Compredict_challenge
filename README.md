@@ -116,6 +116,13 @@ Note: same for DaemonSets, ReplicaSets, ReplicationController.
 
 ## Folder structure
 
+<p align="center">
+  <a>
+    <img src="screenshots/task2.png" alt="Logo" width="300" height="400">
+  </a>
+</p>
+
+
 ## Steps to reproduce the work
 
 
