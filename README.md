@@ -122,7 +122,14 @@ Note: same for DaemonSets, ReplicaSets, ReplicationController.
   </a>
 </p>
 
-
+1. requirements.txt: contains the required python libraries to execute the script
+```sh
+kubernetes==12.0.1
+```
+2. main.py: python scritp to create a pod 
+3. pod/python_pod.py: python package containing 2 classes 
+* Container class: abstraction for a container 
+* Pod  class: abstraction for pod object 
 ## Steps to reproduce the work
 
 
