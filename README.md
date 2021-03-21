@@ -80,6 +80,8 @@ helm3 install nginx ingress-nginx/ingress-nginx\
 kubectl apply -f ingress_controller/nginx_ingress_controller.yml
 ```
 
+## Screenshot 
+
 
 ### Issue
 
@@ -143,7 +145,7 @@ pip3 install -r requirements.py
 ```sh
 python3 main.py 
 ```
-
+## Screenshot 
 
 
 
