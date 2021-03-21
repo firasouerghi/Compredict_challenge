@@ -4,6 +4,22 @@ Compredict challenge work
 
 # Task 1:
 
+### Issue
+
+
+**Concerning the deployment RestartPolicy**
+**I found that Deployments allow only Always as a restartPolicy.**
+**If you try OnFailure on Never you will get the following error**
+
+
+
+Deployments allow only Always for the restartPolicy. Refer this documentation https://kubernetes.io/docs/concepts/workloads/controllers/deployment/#pod-template
+
+Also refer the issue report long back regarding the same. https://github.com/kubernetes/kubernetes/issues/24725
+
+
+Note: same for DaemonSets, ReplicaSets, ReplicationController.
+
 
 ## Folder structure
 
@@ -55,7 +71,7 @@ kubectl apply -f deployments/redis_deployment.yml
 ```
 9. Expose the django app to the public using ingress 
 
-* Install helm3 if it is not already installed 
+* Install helm3 if it is not already installed (Optional)
 ```sh
 wget https://get.helm.sh/helm-v3.0.1-linux-amd64.tar.gz
 tar -zxvf helm-v3.0.1-linux-amd64.tar.gz
