@@ -61,7 +61,7 @@ wget https://get.helm.sh/helm-v3.0.1-linux-amd64.tar.gz
 tar -zxvf helm-v3.0.1-linux-amd64.tar.gz
 sudo mv linux-amd64/helm /usr/local/bin/helm3
 ```
-* Setup ingress-nginx  official repository
+* Setup ingress-nginx official repository
 
 ```sh
 helm3 repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
