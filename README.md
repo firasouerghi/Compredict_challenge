@@ -126,7 +126,7 @@ Note: same for DaemonSets, ReplicaSets, ReplicationController.
 ```sh
 kubernetes==12.0.1
 ```
-2. main.py: python scritp to create a pod 
+2. main.py: python scritp that will read the pod specification from the specifications.ini file and create a pod 
 3. specifications.ini file : where a user can define a pod specification  
 4. pod/python_pod.py: python package containing 2 classes 
 * Container class: abstraction of a container 
@@ -136,7 +136,13 @@ kubernetes==12.0.1
 1. Install the needed requirements:
 ```sh
 pip3 install -r requirements.py
-``
+```
+
+2. run the script: 
+
+```sh
+python3 main.py 
+```
 
 
 
