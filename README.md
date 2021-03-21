@@ -97,6 +97,10 @@ The Deployment "redis-deployment" is invalid: spec.template.spec.restartPolicy: 
 
 Deployments allow only Always for the restartPolicy. Refer this documentation https://kubernetes.io/docs/concepts/workloads/controllers/deployment/#pod-template
 
+```Only a .spec.template.spec.restartPolicy equal to Always is allowed, which is the default if not specified.```
+
+
+
 Also refer the issue report long back regarding the same.
 
 https://github.com/kubernetes/kubernetes/issues/24725
