@@ -2,6 +2,30 @@
 Compredict challenge work
 
 
+# Task 1:
+
+
+## Folder structure
+
+<p align="center">
+  <a>
+    <img src="screenshots/task.png" alt="Logo" width="500" height="200">
+  </a>
+</p>
+
+## Steps to reproduce the work
+
+
+
+# Task 2:
+
+
+## Folder structure
+
+## Steps to reproduce the work
+
+
+
 
 # Assignement 
 
