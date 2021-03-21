@@ -33,4 +33,7 @@ if __name__=='__main__':
                 pod_conf['CONTAINER']['containername'],
                 pod_conf['CONTAINER']['containerimage']
               )
+    pod.create_pod()
+
+
 
