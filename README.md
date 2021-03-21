@@ -49,7 +49,7 @@ kubectl apply -f deployments/redis_deployment.yml
 ```
 8. Deploy the app 
 
-I have created a custom docker image for django and made it public on dockerhub(https://hub.docker.com/repository/docker/firasimages/django) you can also find the docker file under the dockerfiles folder
+I have created a custom docker image for django and made it public on [dockerhub](https://hub.docker.com/repository/docker/firasimages/django) you can also find the docker file under the dockerfiles folder
 
 ```sh
 kubectl apply -f deployments/redis_deployment.yml
