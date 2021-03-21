@@ -9,7 +9,7 @@ Compredict challenge work
 
 <p align="center">
   <a>
-    <img src="screenshots/task.png" alt="Logo" width="500" height="200">
+    <img src="screenshots/task.png" alt="Logo" width="300" height="400">
   </a>
 </p>
 
