@@ -4,30 +4,6 @@ Compredict challenge work
 
 # Task 1:
 
-### Issue
-
-
-**Concerning the deployment RestartPolicy**
-
-**I found that Deployments allow only Always as a restartPolicy.**
-
-**If you try OnFailure on Never you will get the following error**
-
-```sh
-The Deployment "redis-deployment" is invalid: spec.template.spec.restartPolicy: Unsupported value: "OnFailure": supported values: "Always"
-```
-
-
-Deployments allow only Always for the restartPolicy. Refer this documentation https://kubernetes.io/docs/concepts/workloads/controllers/deployment/#pod-template
-
-Also refer the issue report long back regarding the same.
-
-https://github.com/kubernetes/kubernetes/issues/24725
-
-
-Note: same for DaemonSets, ReplicaSets, ReplicationController.
-
-
 ## Folder structure
 
 
@@ -101,6 +77,33 @@ helm3 install nginx ingress-nginx/ingress-nginx\
 ```sh
 kubectl apply -f ingress_controller/nginx_ingress_controller.yml
 ```
+
+
+### Issue
+
+
+**Concerning the deployment RestartPolicy**
+
+**I found that Deployments allow only Always as a restartPolicy.**
+
+**If you try OnFailure on Never you will get the following error**
+
+```sh
+The Deployment "redis-deployment" is invalid: spec.template.spec.restartPolicy: Unsupported value: "OnFailure": supported values: "Always"
+```
+
+
+Deployments allow only Always for the restartPolicy. Refer this documentation https://kubernetes.io/docs/concepts/workloads/controllers/deployment/#pod-template
+
+Also refer the issue report long back regarding the same.
+
+https://github.com/kubernetes/kubernetes/issues/24725
+
+
+Note: same for DaemonSets, ReplicaSets, ReplicationController.
+
+
+
 
 # Task 2:
 
