@@ -1,0 +1,58 @@
+kind: StatefulSet 
+apiVersion: apps/v1 
+metadata:
+  name: postgres-deployment
+  namespace: compredict-task 
+  labels:
+    app: postgres-db 
+  
+spec:
+
+  serviceName: postgres-service
+
+  template:
+    metadata:
+      name: db 
+      labels:
+        app: postgres-db 
+
+    spec:
+      containers:
+      - envFrom:
+          - configMapRef:
+              name: db-envars
+          - secretRef:
+              name: db-secret
+        image: postgres:12.3
+        name: postgres-db 
+        ports:
+          - containerPort: 5432
+            name: db-port 
+        volumeMounts:
+        - mountPath: /var/lib/postgresql/data
+          name: db-volume
+      volumes:
+      - name: db-volume
+        persistentVolumeClaim:
+          claimName: db-volume
+  replicas: 1
+  selector:
+    matchLabels:
+      app: postgres-db 
+
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: postgres-service
+  namespace: compredict-task
+
+spec:
+  type: ClusterIP
+  ports:
+  - targetPort: 5432
+    protocol: TCP
+    port: 5432
+  selector:
+    app: postgres-db 

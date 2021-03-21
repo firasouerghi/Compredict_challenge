@@ -1,0 +1,110 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: django-deployment
+  namespace: compredict-task
+  labels:
+    app: django
+
+spec:
+
+  replicas: 2
+  strategy:
+    type: RollingUpdate
+    rollingUpdate: 
+      maxSurge: 2
+      maxUnavailable: 0
+  selector:
+    matchLabels:
+      app: django
+  template:
+    metadata:
+      labels:
+        app: django
+    spec:
+      containers:
+      - image: firasimages/django:1.0.0
+        name: django-app
+        ports:
+          - name: gunicorn-port
+            containerPort: 8000
+        envFrom:
+          - configMapRef:
+              name: db-envars
+          - secretRef:
+              name: db-secret 
+        env:
+          - name: DJANGO_DEBUG
+            value: "True"
+          - name: DJANGO_ALLOWED_HOSTS
+            value: "*"
+          - name: DATABASE_ENGINE
+            value: postgresql_psycopg2
+        livenessProbe:
+          httpGet:
+            path: /
+            port: gunicorn-port 
+          initialDelaySeconds: 30
+          periodSeconds: 30
+          timeoutSeconds: 2
+          failureThreshold: 2
+        readinessProbe:
+          httpGet:
+            path: /
+            port: gunicorn-port
+          initialDelaySeconds: 30
+          periodSeconds: 30
+          timeoutSeconds: 5
+          failureThreshold: 2
+      restartPolicy: Always  #OnFailure and Never are unsupported value !!! https://stackoverflow.com/questions/55169075/restartpolicy-unsupported-value-never-supported-values-always
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: compredict-task
+  name: django-service
+  labels:
+    app: django-service 
+spec:
+  type: ClusterIP
+  ports:
+  - port: 8000
+    targetPort: 8000
+    name: gunicorn-port
+  selector:
+    app: django
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  #strategy: m3a replicas 
+  #  type: RollingUpdate
+  #  rollingUpdate:
+  #    maxSurge: 2
+  #    maxUnavailable: 0

@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  namespace: compredict-task
+  name: db-envars
+data:
+  POSTGRES_USER: compredict 
+  POSTGRES_DB: postgres-db
+  POSTGRES_PORT: "5432"
+  POSTGRES_HOST: postgres
+
+ 

@@ -1,0 +1,58 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: compredict-task
+  name: redis-deployment 
+  labels:
+    app: redis
+  
+spec:
+
+  template:
+    metadata:
+      name: redis 
+      labels:
+        app: redis
+    spec:
+      containers:
+        - name: redis
+          image: redis:3.2
+          ports:
+            - name: redis-port 
+              containerPort: 6379
+          readinessProbe:
+            tcpSocket:
+              port: redis-port
+            initialDelaySeconds: 30
+            periodSeconds: 20
+            timeoutSeconds: 3
+            failureThreshold: 3
+          livenessProbe:
+            tcpSocket:
+              port: redis-port
+            initialDelaySeconds: 30
+            periodSeconds: 20
+            timeoutSeconds: 3
+            failureThreshold: 3
+      restartPolicy: Always #   OnFailure and Never are unsupported value !!! https://stackoverflow.com/questions/55169075/restartpolicy-unsupported-value-never-supported-values-always
+  replicas: 1
+  selector:
+    matchLabels:
+      app: redis
+
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: redis-service 
+  namespace: compredict-task
+
+spec:
+  ports:
+  - targetPort: 6379
+    protocol: TCP
+    port: 6379
+  selector:
+    app: redis
