@@ -118,7 +118,7 @@ Note: same for DaemonSets, ReplicaSets, ReplicationController.
 
 <p align="center">
   <a>
-    <img src="screenshots/task2.png" alt="Logo" width="300" height="400">
+    <img src="screenshots/task2.png" alt="Logo" width="400" height="200">
   </a>
 </p>
 
