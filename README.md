@@ -17,7 +17,8 @@ Compredict challenge work
 
 Deployments allow only Always for the restartPolicy. Refer this documentation https://kubernetes.io/docs/concepts/workloads/controllers/deployment/#pod-template
 
-Also refer the issue report long back regarding the same. 
+Also refer the issue report long back regarding the same.
+ 
 https://github.com/kubernetes/kubernetes/issues/24725
 
 
