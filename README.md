@@ -20,22 +20,21 @@ Compredict challenge work
 ```sh
 kubectl apply -f namespace/namespace.yml
 ```
-2. Create the storage class
-
-```sh
-kubectl apply -f volumes/storage_class.yml
-```
-3. Create the volume
-```sh
-kubectl apply -f volumes/db_storage_volume.yml
-```
-4. Apply postgres database ConfigMap file
+2. Apply postgres database ConfigMap file
 ```sh
 kubectl apply -f configmaps/postgres.yml
 ```
-5. Apply the postgres database secret file
+3. Apply the postgres database secret file
 ```sh
 kubectl apply -f secrets/db_secret.yml
+```
+4. Create the storage class
+```sh
+kubectl apply -f volumes/storage_class.yml
+```
+5. Create the volume
+```sh
+kubectl apply -f volumes/db_storage_volume.yml
 ```
 6. Deploy the database
 
