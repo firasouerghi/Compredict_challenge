@@ -52,7 +52,7 @@ kubectl apply -f deployments/redis_deployment.yml
 I have created a custom docker image for django and made it public on [dockerhub](https://hub.docker.com/repository/docker/firasimages/django) you can also find the docker file under the dockerfiles folder
 
 ```sh
-kubectl apply -f deployments/redis_deployment.yml
+kubectl apply -f deployments/django_deployment.yml
 ```
 9. Expose the django app to the public using ingress 
 
@@ -128,8 +128,8 @@ Note: same for DaemonSets, ReplicaSets, ReplicationController.
 ```sh
 kubernetes==12.0.1
 ```
-2. main.py: python scritp that will read the pod specification from the specifications.ini file and create a pod 
-3. specifications.ini file : where a user can define a pod specification  
+2. main.py: python scritp that will read the pod specifications defined by the user from the specifications.ini file and create a pod 
+3. specifications.ini file : where a user can define a pod specifications
 4. pod/python_pod.py: python package containing 2 classes 
 * Container class: abstraction of a container 
 * Pod  class: abstraction of a pod object 
