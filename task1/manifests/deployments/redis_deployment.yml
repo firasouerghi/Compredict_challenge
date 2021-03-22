@@ -34,7 +34,7 @@ spec:
             periodSeconds: 20
             timeoutSeconds: 3
             failureThreshold: 3
-      restartPolicy: Always #   OnFailure and Never are unsupported value !!! https://stackoverflow.com/questions/55169075/restartpolicy-unsupported-value-never-supported-values-always
+      restartPolicy: Always #   OnFailure and Never are unsupported values !!! https://stackoverflow.com/questions/55169075/restartpolicy-unsupported-value-never-supported-values-always
   replicas: 1
   selector:
     matchLabels:

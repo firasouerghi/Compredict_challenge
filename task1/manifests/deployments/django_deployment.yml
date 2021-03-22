@@ -56,7 +56,7 @@ spec:
           periodSeconds: 30
           timeoutSeconds: 5
           failureThreshold: 2
-      restartPolicy: Always  #OnFailure and Never are unsupported value !!! https://stackoverflow.com/questions/55169075/restartpolicy-unsupported-value-never-supported-values-always
+      restartPolicy: Always  #OnFailure and Never are unsupported values !!! https://stackoverflow.com/questions/55169075/restartpolicy-unsupported-value-never-supported-values-always
 
 ---
 apiVersion: v1
