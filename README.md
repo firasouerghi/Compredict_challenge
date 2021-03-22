@@ -71,7 +71,7 @@ helm3 repo update
 * Execute the nginx's chart
 ```sh
 helm3 install nginx ingress-nginx/ingress-nginx\
-	--namespace conpredict-task\
+	--namespace compredict-task\
 	--set rbac.create=true\
 	--set controller.publishService.enabled=true
 ```
