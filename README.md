@@ -1,6 +1,16 @@
 # Compredict_challenge
 Compredict challenge work
 
+## Screenshot 
+
+**Tested on GKE cluster**
+
+<p align="center">
+  <a>
+    <img src="screenshots/demo.png" alt="Logo" width="900" height="400">
+  </a>
+</p>
+
 
 # Task 1:
 
@@ -79,7 +89,6 @@ helm3 install nginx ingress-nginx/ingress-nginx \
 kubectl apply -f ingress_controller/nginx_ingress_controller.yml
 ```
 
-## Screenshot 
 
 
 ### Issue
@@ -144,7 +153,6 @@ pip3 install -r requirements.py
 ```sh
 python3 main.py 
 ```
-## Screenshot 
 
 
 
