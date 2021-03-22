@@ -40,6 +40,8 @@ spec:
             value: "*"
           - name: DATABASE_ENGINE
             value: postgresql_psycopg2
+          - name: POSTGRES_HOST
+            value: postgres-service
         livenessProbe:
           httpGet:
             path: /
